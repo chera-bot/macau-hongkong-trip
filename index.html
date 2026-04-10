@@ -15,34 +15,150 @@
     max-width: 800px;
     margin: 0 auto;
   }
-  h1 { font-size: 20px; font-weight: 600; margin-bottom: 1.5rem; text-align: center; }
-  .day { margin-bottom: 2rem; background: #fff; border-radius: 12px; overflow: hidden; box-shadow: 0 1px 3px rgba(0,0,0,0.08); }
-  .day-title { font-size: 15px; font-weight: 600; padding: 0.75rem 1rem; background: linear-gradient(135deg, #7F77DD, #6C63FF); color: #fff; }
+  h1 { font-size: 22px; font-weight: 700; margin-bottom: 0.5rem; text-align: center; }
+  .subtitle { text-align: center; color: #888; font-size: 13px; margin-bottom: 2rem; }
+
+  /* Section headers */
+  .section-header {
+    display: flex; align-items: center; gap: 10px;
+    margin: 2.5rem 0 1rem; padding-bottom: 0.5rem;
+    border-bottom: 2px solid;
+  }
+  .section-header.macau { border-color: #e8b130; }
+  .section-header.hongkong { border-color: #e74c3c; }
+  .section-header h2 { font-size: 18px; font-weight: 700; }
+  .section-header .flag { font-size: 24px; }
+
+  /* Info card */
+  .info-card {
+    background: #fff; border-radius: 12px; overflow: hidden;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.08); margin-bottom: 1.5rem;
+  }
+  .info-card-header {
+    font-size: 14px; font-weight: 600; padding: 0.75rem 1rem;
+    color: #fff;
+  }
+  .info-card-header.macau { background: linear-gradient(135deg, #e8b130, #d4a017); }
+  .info-card-header.hongkong { background: linear-gradient(135deg, #e74c3c, #c0392b); }
+  .info-card-body { padding: 1rem; }
+  .info-card-body p { font-size: 13px; line-height: 1.8; color: #444; margin-bottom: 0.5rem; }
+  .info-card-body p:last-child { margin-bottom: 0; }
+
+  .map-img {
+    width: 100%; max-width: 500px; display: block;
+    margin: 0.75rem auto; border-radius: 8px;
+  }
+
+  /* Tips grid */
+  .tips-grid {
+    display: grid; grid-template-columns: 1fr 1fr;
+    gap: 0.75rem; margin-top: 0.75rem;
+  }
+  .tip-item {
+    background: #fafafa; border-radius: 8px; padding: 12px;
+    font-size: 12px; line-height: 1.6; color: #444;
+  }
+  .tip-item .tip-icon { font-size: 18px; display: block; margin-bottom: 4px; }
+  .tip-item .tip-title { font-weight: 600; font-size: 13px; color: #1a1a1a; margin-bottom: 2px; }
+
+  /* Day schedule */
+  .day { margin-bottom: 1.5rem; background: #fff; border-radius: 12px; overflow: hidden; box-shadow: 0 1px 3px rgba(0,0,0,0.08); }
+  .day-title { font-size: 15px; font-weight: 600; padding: 0.75rem 1rem; color: #fff; }
+  .day-title.macau { background: linear-gradient(135deg, #e8b130, #d4a017); }
+  .day-title.hongkong { background: linear-gradient(135deg, #e74c3c, #c0392b); }
   .row { display: grid; grid-template-columns: 100px 1fr 1fr; gap: 0; border-bottom: 1px solid #f0f0f0; }
   .row:last-child { border-bottom: none; }
   .cell { padding: 10px 12px; font-size: 13px; line-height: 1.6; }
-  .header { background: #fafafa; font-weight: 600; font-size: 12px; color: #666; text-transform: uppercase; letter-spacing: 0.5px; }
-  .time { color: #7F77DD; font-size: 12px; font-weight: 500; white-space: nowrap; }
+  .header { background: #fafafa; font-weight: 600; font-size: 12px; color: #666; letter-spacing: 0.5px; }
+  .time { color: #888; font-size: 12px; font-weight: 500; white-space: nowrap; }
   .content { border-left: 1px solid #f0f0f0; }
   .note { color: #666; font-size: 12px; border-left: 1px solid #f0f0f0; }
   .note a { color: #6C63FF; word-break: break-all; text-decoration: none; }
   .note a:hover { text-decoration: underline; }
   .warning { color: #e67e22; font-weight: 500; }
+  .badge {
+    display: inline-block; font-size: 10px; font-weight: 600;
+    padding: 2px 6px; border-radius: 4px; margin-left: 4px; vertical-align: middle;
+  }
+  .badge.taipa { background: #fef3cd; color: #856404; }
+  .badge.peninsula { background: #d4edda; color: #155724; }
+  .badge.hk { background: #f8d7da; color: #721c24; }
+
   @media (max-width: 600px) {
     body { padding: 1rem 0.5rem; }
     .row { grid-template-columns: 80px 1fr; }
     .note { grid-column: 1 / -1; padding: 4px 12px 10px; border-left: none; background: #fafafa; font-size: 11px; }
     .header.note-header { display: none; }
     .cell { padding: 8px 10px; }
+    .tips-grid { grid-template-columns: 1fr; }
   }
 </style>
 </head>
 <body>
 
-<h1>&#x1F30F; &#xB9C8;&#xCE74;&#xC624; &middot; &#xD64D;&#xCF69; &#xC5EC;&#xD589; &#xC77C;&#xC815;&#xD45C;</h1>
+<h1>마카오 &middot; 홍콩 여행 일정표</h1>
+<p class="subtitle">3박 4일 | 마카오 2일 + 홍콩 2일</p>
 
+<!-- ==================== 마카오 ==================== -->
+<div class="section-header macau">
+  <span class="flag">&#x1F1F2;&#x1F1F4;</span>
+  <h2>마카오</h2>
+</div>
+
+<!-- 마카오 지역 소개 -->
+<div class="info-card">
+  <div class="info-card-header macau">마카오 지역 안내</div>
+  <div class="info-card-body">
+    <img src="macau-map.png" alt="마카오 지역 지도" class="map-img">
+    <p>마카오는 크게 <strong>마카오 반도</strong>, <strong>타이파</strong>, <strong>콜로안</strong> 세 지역으로 나뉩니다. 각 구역이 도보와 버스로 가까워 이동이 편리합니다.</p>
+    <p><span class="badge taipa">타이파</span> <strong>1일차</strong> &mdash; 공항·베네시안이 있는 타이파 지역 위주로 관광합니다. 대형 리조트, 타이파 빌리지, 에펠탑 포토존 등이 모여 있어요.</p>
+    <p><span class="badge peninsula">마카오 반도</span> <strong>2일차</strong> &mdash; 세나도 광장, 성 바울 성당, 몬테 요새 등 유네스코 세계문화유산이 밀집된 마카오 반도를 둘러봅니다. 숙소도 이 지역에 있습니다.</p>
+    <p style="color:#888; font-size:12px; margin-top:4px;">* 콜로안은 조용한 해변마을로, 이번 일정에는 포함되지 않습니다.</p>
+  </div>
+</div>
+
+<!-- 마카오 여행 팁 -->
+<div class="info-card">
+  <div class="info-card-header macau">여행 준비 &amp; 꿀팁</div>
+  <div class="info-card-body">
+    <div class="tips-grid">
+      <div class="tip-item">
+        <span class="tip-icon">&#x1F321;&#xFE0F;</span>
+        <div class="tip-title">날씨 &amp; 옷차림</div>
+        25~30&#xB0;C, 습도 높음. <strong>반팔 + 반바지</strong> 기본! 실내 냉방이 강하니 <strong>가디건이나 바람막이</strong> 하나 꼭 챙기세요.
+      </div>
+      <div class="tip-item">
+        <span class="tip-icon">&#x2602;&#xFE0F;</span>
+        <div class="tip-title">필수 준비물</div>
+        <strong>우산</strong> (갑자기 소나기 자주 옴), <strong>휴대용 선풍기</strong> (습해서 필수), 선크림, 편한 운동화
+      </div>
+      <div class="tip-item">
+        <span class="tip-icon">&#x1F4B0;</span>
+        <div class="tip-title">환율 &amp; 결제</div>
+        1 MOP &asymp; 170원. 마카오에서 <strong>홍콩달러(HKD) 사용 가능</strong>하지만, 홍콩에서는 마카오 파타카(MOP) 사용 불가! 소액 현금 필요 (푸드코트 등).
+      </div>
+      <div class="tip-item">
+        <span class="tip-icon">&#x1F68C;</span>
+        <div class="tip-title">교통비 절약</div>
+        <strong>호텔 셔틀버스를 적극 활용</strong>하면 교통비 0원! 버스 탈 때는 잔돈 필수 (거스름돈 안 줌). 버스비 1인 6 MOP.
+      </div>
+      <div class="tip-item">
+        <span class="tip-icon">&#x1F4F1;</span>
+        <div class="tip-title">통신</div>
+        유심/eSIM 미리 준비. 마카오·홍콩 통합 데이터 상품 추천. 대부분의 카지노·호텔에서 무료 Wi-Fi 가능.
+      </div>
+      <div class="tip-item">
+        <span class="tip-icon">&#x1F3B0;</span>
+        <div class="tip-title">카지노</div>
+        만 21세 이상 입장 가능. 여권 지참 필수. 복장 규정은 캐주얼 OK. 사진 촬영 금지.
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Day 1 -->
 <div class="day">
-  <div class="day-title">&#x1F4C5; 1일차 &mdash; 인천 &rarr; 마카오</div>
+  <div class="day-title macau">1일차 &mdash; 인천 &rarr; 마카오 <span class="badge taipa">타이파 지역</span></div>
   <div class="row"><div class="cell header time">시간</div><div class="cell header content">내용</div><div class="cell header content note-header">비고</div></div>
   <div class="row"><div class="cell time">07:00</div><div class="cell content">인천공항 도착</div><div class="cell note"></div></div>
   <div class="row"><div class="cell time">09:50</div><div class="cell content">출국</div><div class="cell note"></div></div>
@@ -51,7 +167,7 @@
   <div class="row"><div class="cell time">14:00</div><div class="cell content">베네시안 호텔 짐 보관</div><div class="cell note"><a href="https://m.blog.naver.com/totyu21/223840873035" target="_blank">참고 블로그</a></div></div>
   <div class="row"><div class="cell time">14:30~15:00</div><div class="cell content">베네시안 푸드코트 점심</div><div class="cell note">O Castico / 팀호완 / 굴국수 / Fortune Hunan Cuisine(마파두부) / 헤이티 / 로드스토우 에그타르트(레고 옆)<br><span class="warning">&#x26A0;&#xFE0F; 100 MOP 이하 현금 필요</span></div></div>
   <div class="row"><div class="cell time">15:00~15:40</div><div class="cell content">에펠탑 포토존</div><div class="cell note"><a href="https://m.blog.naver.com/youri702/223747670539" target="_blank">참고 블로그</a></div></div>
-  <div class="row"><div class="cell time">15:40</div><div class="cell content">버스 이동</div><div class="cell note">1인당 6 타파카, 거스름돈 없음</div></div>
+  <div class="row"><div class="cell time">15:40</div><div class="cell content">버스 이동</div><div class="cell note">1인당 6 MOP, 거스름돈 없음</div></div>
   <div class="row"><div class="cell time">15:40~18:00</div><div class="cell content">타이파 빌리지 관광</div><div class="cell note">레몬첼로 젤라또 / 세이키카페 주빠빠오&middot;밀크티</div></div>
   <div class="row"><div class="cell time">18:30</div><div class="cell content">저녁식사</div><div class="cell note">Samurai Fish</div></div>
   <div class="row"><div class="cell time">18:30~</div><div class="cell content">원 팰리스 분수쇼 &amp; 야경 감상</div><div class="cell note"></div></div>
@@ -61,8 +177,9 @@
   <div class="row"><div class="cell time">이후</div><div class="cell content">호텔 체크인 &amp; 휴식</div><div class="cell note"></div></div>
 </div>
 
+<!-- Day 2 -->
 <div class="day">
-  <div class="day-title">&#x1F4C5; 2일차 &mdash; 마카오 관광 &rarr; 홍콩 이동</div>
+  <div class="day-title macau">2일차 &mdash; 마카오 관광 &rarr; 홍콩 이동 <span class="badge peninsula">마카오 반도</span></div>
   <div class="row"><div class="cell header time">시간</div><div class="cell header content">내용</div><div class="cell header content note-header">비고</div></div>
   <div class="row"><div class="cell time">10:30</div><div class="cell content">체크아웃 &amp; 짐 보관</div><div class="cell note"></div></div>
   <div class="row"><div class="cell time">11:00</div><div class="cell content">쏸라펀 아점</div><div class="cell note"></div></div>
@@ -81,6 +198,44 @@
   <div class="row"><div class="cell time">19:00</div><div class="cell content">호텔 체크인</div><div class="cell note"></div></div>
   <div class="row"><div class="cell time">19:30</div><div class="cell content">저녁식사</div><div class="cell note">Yuen Hing Restaurant</div></div>
   <div class="row"><div class="cell time">이후</div><div class="cell content">야경 감상 &rarr; 호텔 복귀 &rarr; 야식 파티 &#x1F389;</div><div class="cell note"></div></div>
+</div>
+
+<!-- ==================== 홍콩 ==================== -->
+<div class="section-header hongkong">
+  <span class="flag">&#x1F1ED;&#x1F1F0;</span>
+  <h2>홍콩</h2>
+</div>
+
+<div class="info-card">
+  <div class="info-card-header hongkong">홍콩 준비 사항</div>
+  <div class="info-card-body">
+    <div class="tips-grid">
+      <div class="tip-item">
+        <span class="tip-icon">&#x1F4B3;</span>
+        <div class="tip-title">옥토퍼스 카드</div>
+        교통·편의점·식당 등 거의 모든 곳에서 사용 가능. 셩완역 도착 시 구매 예정.
+      </div>
+      <div class="tip-item">
+        <span class="tip-icon">&#x1F4B5;</span>
+        <div class="tip-title">통화 주의</div>
+        홍콩에서는 <strong>홍콩달러(HKD)만 사용</strong>. 마카오 파타카(MOP)는 사용 불가! ATM에서 홍콩달러 인출 추천.
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Day 3 -->
+<div class="day">
+  <div class="day-title hongkong">3일차 &mdash; 홍콩 관광</div>
+  <div class="row"><div class="cell header time">시간</div><div class="cell header content">내용</div><div class="cell header content note-header">비고</div></div>
+  <div class="row"><div class="cell time">&nbsp;</div><div class="cell content" style="color:#aaa; text-align:center; grid-column: 2 / -1; padding: 2rem;">일정 준비 중...</div></div>
+</div>
+
+<!-- Day 4 -->
+<div class="day">
+  <div class="day-title hongkong">4일차 &mdash; 홍콩 &rarr; 인천</div>
+  <div class="row"><div class="cell header time">시간</div><div class="cell header content">내용</div><div class="cell header content note-header">비고</div></div>
+  <div class="row"><div class="cell time">&nbsp;</div><div class="cell content" style="color:#aaa; text-align:center; grid-column: 2 / -1; padding: 2rem;">일정 준비 중...</div></div>
 </div>
 
 </body>
