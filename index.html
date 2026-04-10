@@ -108,6 +108,44 @@
   .warning { color: #e67e22; font-weight: 500; }
   .food-desc { font-size: 11px; color: #999; }
 
+  /* Area cards (interactive) */
+  .area-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 0.5rem; margin-top: 0.75rem; }
+  .area-card {
+    border-radius: 8px; overflow: hidden; cursor: pointer;
+    border: 2px solid #eee; transition: border-color 0.2s;
+  }
+  .area-card[open] { border-color: var(--ac); }
+  .area-card summary {
+    display: flex; align-items: center; gap: 8px;
+    padding: 10px 12px; font-size: 13px; font-weight: 600; color: #fff;
+    list-style: none; user-select: none;
+  }
+  .area-card summary::-webkit-details-marker { display: none; }
+  .area-card summary::after {
+    content: '+'; margin-left: auto; font-size: 16px; font-weight: 300; opacity: 0.8;
+  }
+  .area-card[open] summary::after { content: '-'; }
+  .area-card .area-body {
+    padding: 10px 12px; font-size: 12px; line-height: 1.7; color: #444; background: #fff;
+  }
+  .area-card .area-body .area-tag {
+    display: inline-block; font-size: 10px; font-weight: 600;
+    padding: 1px 6px; border-radius: 3px; margin-right: 4px;
+    background: #f0f0f0; color: #666;
+  }
+  .area-card .area-body .area-tag.hotel { background: #fff3cd; color: #856404; }
+  .area-card .area-body .area-tag.day { background: #d1ecf1; color: #0c5460; }
+  .area-card .area-body .area-tag.airport { background: #f8d7da; color: #721c24; }
+  /* Color themes */
+  .area-card.gold summary { background: linear-gradient(135deg, #e8b130, #d4a017); --ac: #e8b130; }
+  .area-card.green summary { background: linear-gradient(135deg, #27ae60, #219a52); --ac: #27ae60; }
+  .area-card.gray summary { background: linear-gradient(135deg, #95a5a6, #7f8c8d); --ac: #95a5a6; }
+  .area-card.red summary { background: linear-gradient(135deg, #e74c3c, #c0392b); --ac: #e74c3c; }
+  .area-card.blue summary { background: linear-gradient(135deg, #3498db, #2980b9); --ac: #3498db; }
+  .area-card.teal summary { background: linear-gradient(135deg, #1abc9c, #16a085); --ac: #1abc9c; }
+  .area-card.purple summary { background: linear-gradient(135deg, #9b59b6, #8e44ad); --ac: #9b59b6; }
+  .area-card.navy summary { background: linear-gradient(135deg, #34495e, #2c3e50); --ac: #34495e; }
+
   /* ===== Mobile ===== */
   @media (max-width: 600px) {
     body { padding: 1rem 0.75rem; }
@@ -134,6 +172,7 @@
 
     .tips-grid { grid-template-columns: 1fr; gap: 0.5rem; }
     .tip-item { padding: 10px; }
+    .area-grid { grid-template-columns: 1fr; }
 
     .day-title { font-size: 13px; padding: 0.6rem 0.75rem; }
     .badge { font-size: 9px; padding: 1px 5px; }
@@ -178,10 +217,40 @@
   <div class="info-card-header macau">마카오 지역 안내</div>
   <div class="info-card-body">
     <img src="macau-map.png" alt="마카오 지역 지도" class="map-img">
-    <p>마카오는 크게 <strong>마카오 반도</strong>, <strong>타이파</strong>, <strong>콜로안</strong> 세 지역으로 나뉩니다. 각 구역이 도보와 버스로 가까워 이동이 편리합니다.</p>
-    <p><span class="badge taipa">타이파</span> <strong>1일차</strong> &mdash; 공항&middot;베네시안이 있는 타이파 지역 위주로 관광합니다. 대형 리조트, 타이파 빌리지, 에펠탑 포토존 등이 모여 있어요.</p>
-    <p><span class="badge peninsula">마카오 반도</span> <strong>2일차</strong> &mdash; 세나도 광장, 성 바울 성당, 몬테 요새 등 유네스코 세계문화유산이 밀집된 마카오 반도를 둘러봅니다. 숙소도 이 지역에 있습니다.</p>
-    <p style="color:#888; font-size:12px; margin-top:4px;">* 콜로안은 조용한 해변마을로, 이번 일정에는 포함되지 않습니다.</p>
+    <p>마카오는 크게 세 지역으로 나뉩니다. 각 구역이 도보와 버스로 가까워 이동이 편리해요. 지역을 눌러보세요!</p>
+    <div class="area-grid">
+      <details class="area-card gold">
+        <summary>타이파</summary>
+        <div class="area-body">
+          <span class="area-tag day">1일차</span> 공항 &amp; 리조트 밀집 지역<br><br>
+          &bull; 마카오 국제공항<br>
+          &bull; 베네시안 리조트 &amp; 푸드코트<br>
+          &bull; 에펠탑 포토존 (파리지앵)<br>
+          &bull; 타이파 빌리지 (세이키카페, 레몬첼로)<br>
+          &bull; 윈 팰리스 분수쇼<br>
+          &bull; 갤럭시 호텔
+        </div>
+      </details>
+      <details class="area-card green">
+        <summary>마카오 반도</summary>
+        <div class="area-body">
+          <span class="area-tag day">2일차</span> <span class="area-tag hotel">숙소</span> 유네스코 세계문화유산<br><br>
+          &bull; 세나도 광장<br>
+          &bull; 성 바울 성당 유적<br>
+          &bull; 몬테 요새<br>
+          &bull; 성 도미니코 성당<br>
+          &bull; 육포거리<br>
+          &bull; 마카오 페리터미널 (홍콩행)
+        </div>
+      </details>
+      <details class="area-card gray">
+        <summary>콜로안</summary>
+        <div class="area-body">
+          조용한 해변마을. 로드스토우 에그타르트 본점이 여기!<br>
+          이번 일정에는 포함되지 않습니다.
+        </div>
+      </details>
+    </div>
   </div>
 </div>
 
@@ -264,8 +333,75 @@
   <h2>홍콩</h2>
 </div>
 
+<!-- 홍콩 지역 소개 -->
 <div class="info-card">
-  <div class="info-card-header hongkong">홍콩 준비 사항</div>
+  <div class="info-card-header hongkong">홍콩 지역 안내</div>
+  <div class="info-card-body">
+    <img src="hongkong-map.png" alt="홍콩 지역 지도" class="map-img">
+    <p>홍콩은 크게 <strong>구룡반도</strong>, <strong>홍콩섬</strong>, <strong>란타우섬</strong>으로 나뉩니다. MTR(지하철)로 빠르게 이동 가능! 지역을 눌러보세요.</p>
+    <div class="area-grid">
+      <details class="area-card red">
+        <summary>구룡반도 (Kowloon)</summary>
+        <div class="area-body">
+          <span class="area-tag day">3일차</span> 로컬 감성 &amp; 야시장<br><br>
+          <strong>침사추이 (TST)</strong><br>
+          &bull; 스타의 거리 &mdash; 워터프론트 야경<br>
+          &bull; 마로우프 앤 퍼프 베이크 &mdash; 에그타르트<br><br>
+          <strong>조던 (Jordan)</strong><br>
+          &bull; 호주우유공사 &mdash; 로컬 차찬탱<br>
+          &bull; 마미 펜케이크<br>
+          &bull; 템플스트리트 야시장<br><br>
+          <strong>몽콕 (Mong Kok)</strong><br>
+          &bull; 레이디스마켓 &mdash; 기념품 쇼핑<br>
+          &bull; 원 딤섬 &mdash; 미슐랭 딤섬<br><br>
+          <strong>웨스트 카우룽</strong><br>
+          &bull; 서구룡 문화지구 &mdash; 로컬 야경 명소
+        </div>
+      </details>
+      <details class="area-card teal">
+        <summary>홍콩섬 &mdash; 센트럴</summary>
+        <div class="area-body">
+          <span class="area-tag day">4일차</span> <span class="area-tag hotel">숙소</span> 핵심 관광지<br><br>
+          <strong>셩완 (Sheung Wan)</strong><br>
+          &bull; 하프웨이 커피<br>
+          &bull; 페리터미널 (마카오에서 도착)<br><br>
+          <strong>센트럴 &amp; 소호 (Central/SoHo)</strong><br>
+          &bull; 미드레벨 에스컬레이터<br>
+          &bull; 란퐁유엔 &mdash; 밀크티 원조<br>
+          &bull; 침차이키 &mdash; 미슐랭 완탕면<br>
+          &bull; Hollywood Rd &mdash; 카페 &amp; 갤러리<br>
+          &bull; Peking Garden &mdash; 베이징덕<br><br>
+          <strong>더 피크 (The Peak)</strong><br>
+          &bull; 피크 트램 + 스카이 테라스 428<br>
+          &bull; 홍콩 최고의 파노라마 뷰
+        </div>
+      </details>
+      <details class="area-card purple">
+        <summary>홍콩섬 &mdash; 완차이/기타</summary>
+        <div class="area-body">
+          센트럴 동쪽 지역<br><br>
+          &bull; 베이크하우스 &mdash; 에그타르트<br>
+          &bull; Sister Wah (Tin Hau) &mdash; 소고기국수<br>
+          &bull; 마이컵오브티 (Wan Chai) &mdash; 차찬탱<br>
+          &bull; 익청빌딩 (Quarry Bay) &mdash; 트랜스포머 촬영지<br>
+          &bull; Kennedy Town 농구장 &mdash; 포토스팟
+        </div>
+      </details>
+      <details class="area-card navy">
+        <summary>란타우 섬</summary>
+        <div class="area-body">
+          <span class="area-tag airport">공항</span> 홍콩 국제공항 위치<br><br>
+          &bull; Airport Express로 홍콩역에서 약 24분<br>
+          &bull; 4일차 저녁 출발 &rarr; 4/19 00:50 출국
+        </div>
+      </details>
+    </div>
+  </div>
+</div>
+
+<!-- 홍콩 팁 -->
+<div class="info-card">
+  <div class="info-card-header hongkong">홍콩 꿀팁</div>
   <div class="info-card-body">
     <div class="tips-grid">
       <div class="tip-item">
