@@ -90,6 +90,8 @@
   }
   .badge.taipa { background: #fef3cd; color: #856404; }
   .badge.peninsula { background: #d4edda; color: #155724; }
+  .badge.kowloon { background: #d1ecf1; color: #0c5460; }
+  .badge.central { background: #f8d7da; color: #721c24; }
 
   /* Desktop: 3-column grid */
   .row { display: grid; grid-template-columns: 90px 1fr 1fr; gap: 0; border-bottom: 1px solid #f0f0f0; }
@@ -141,7 +143,7 @@
 <body>
 
 <h1>마카오 &middot; 홍콩 여행 일정표</h1>
-<p class="subtitle">3박 4일 | 마카오 2일 + 홍콩 2일</p>
+<p class="subtitle">4/15(화)~4/19(토) | 마카오 2일 + 홍콩 2일</p>
 
 <!-- ==================== 출발 전 체크리스트 ==================== -->
 <div class="section-header prep">
@@ -214,7 +216,7 @@
 
 <!-- Day 1 -->
 <div class="day">
-  <div class="day-title macau">1일차 &mdash; 인천 &rarr; 마카오 <span class="badge taipa">타이파 지역</span></div>
+  <div class="day-title macau">1일차 (4/15 화) &mdash; 인천 &rarr; 마카오 <span class="badge taipa">타이파 지역</span></div>
   <div class="row"><div class="cell header time">시간</div><div class="cell header content">내용</div><div class="cell header content note-header">비고</div></div>
   <div class="row"><div class="cell time">07:00</div><div class="cell content">인천공항 도착</div><div class="cell note">비상금 환전 (MOP + HKD 소액)</div></div>
   <div class="row"><div class="cell time">09:50</div><div class="cell content">출국</div><div class="cell note"></div></div>
@@ -235,7 +237,7 @@
 
 <!-- Day 2 -->
 <div class="day">
-  <div class="day-title macau">2일차 &mdash; 마카오 관광 &rarr; 홍콩 이동 <span class="badge peninsula">마카오 반도</span></div>
+  <div class="day-title macau">2일차 (4/16 수) &mdash; 마카오 관광 &rarr; 홍콩 이동 <span class="badge peninsula">마카오 반도</span></div>
   <div class="row"><div class="cell header time">시간</div><div class="cell header content">내용</div><div class="cell header content note-header">비고</div></div>
   <div class="row"><div class="cell time">10:30</div><div class="cell content">체크아웃 &amp; 짐 보관</div><div class="cell note"></div></div>
   <div class="row"><div class="cell time">11:00</div><div class="cell content">쏸라펀 아점<br><span class="food-desc">Xin La Fun</span></div><div class="cell note">매운 당면국수 전문점</div></div>
@@ -282,16 +284,80 @@
 
 <!-- Day 3 -->
 <div class="day">
-  <div class="day-title hongkong">3일차 &mdash; 홍콩 관광</div>
+  <div class="day-title hongkong">3일차 (4/17 목) &mdash; 홍콩 구룡반도 <span class="badge kowloon">Kowloon</span></div>
   <div class="row"><div class="cell header time">시간</div><div class="cell header content">내용</div><div class="cell header content note-header">비고</div></div>
-  <div class="row"><div class="cell time">&nbsp;</div><div class="cell content" style="color:#aaa; text-align:center; grid-column: 2 / -1; padding: 2rem;">일정 준비 중...</div></div>
+  <div class="row"><div class="cell time">09:30</div><div class="cell content">원 딤섬 아침<br><span class="food-desc">One Dim Sum</span></div><div class="cell note">미슐랭 딤섬 전문점 (Prince Edward)<br>하가우&middot;쇼마이 필수 / 현금</div></div>
+  <div class="row"><div class="cell time">10:30~12:00</div><div class="cell content">레이디스마켓</div><div class="cell note">홍콩 기념품 저렴한 곳<br>흥정 필수!</div></div>
+  <div class="row"><div class="cell time">12:00</div><div class="cell content">호주우유공사<br><span class="food-desc">Australia Dairy Company</span></div><div class="cell note">홍콩 로컬 차찬탱 (Jordan)<br>스크램블에그 토스트&middot;마카로니 수프</div></div>
+  <div class="row"><div class="cell time">13:00</div><div class="cell content">마미 펜케이크<br><span class="food-desc">Jordan</span></div><div class="cell note">홍콩식 디저트 간식</div></div>
+  <div class="row"><div class="cell time">14:00~15:00</div><div class="cell content">스타의 거리</div><div class="cell note">TST 워터프론트 산책<br>브루스리 동상 등 포토존</div></div>
+  <div class="row"><div class="cell time">15:00</div><div class="cell content">마로우프 앤 퍼프 베이크<br><span class="food-desc">TST</span></div><div class="cell note">크리스피 에그타르트</div></div>
+  <div class="row"><div class="cell time">15:30~17:30</div><div class="cell content">자유시간 / 카페</div><div class="cell note"><ul><li>Master Congee <span class="food-desc">— TST, 홍콩식 죽</span></li><li>Fresco Dim Sum <span class="food-desc">— 딤섬</span></li></ul></div></div>
+  <div class="row"><div class="cell time">18:00</div><div class="cell content">서구룡 문화지구</div><div class="cell note">홍콩 로컬 야경 명소<br>하버뷰 일몰&middot;야경 감상</div></div>
+  <div class="row"><div class="cell time">19:30~21:00</div><div class="cell content">템플스트리트 야시장</div><div class="cell note">길거리 음식&middot;구경&middot;쇼핑<br>저녁식사 겸 자유롭게</div></div>
+  <div class="row"><div class="cell time">21:00~</div><div class="cell content">호텔 복귀</div><div class="cell note">MTR로 센트럴 이동</div></div>
 </div>
 
 <!-- Day 4 -->
 <div class="day">
-  <div class="day-title hongkong">4일차 &mdash; 홍콩 &rarr; 인천</div>
+  <div class="day-title hongkong">4일차 (4/18 금) &mdash; 센트럴 &amp; 홍콩섬 &rarr; 출국 <span class="badge central">Central</span></div>
   <div class="row"><div class="cell header time">시간</div><div class="cell header content">내용</div><div class="cell header content note-header">비고</div></div>
-  <div class="row"><div class="cell time">&nbsp;</div><div class="cell content" style="color:#aaa; text-align:center; grid-column: 2 / -1; padding: 2rem;">일정 준비 중...</div></div>
+  <div class="row"><div class="cell time">09:00</div><div class="cell content">하프웨이 커피 아침<br><span class="food-desc">Halfway Coffee, Sheung Wan</span></div><div class="cell note">로컬 스페셜티 커피</div></div>
+  <div class="row"><div class="cell time">10:00</div><div class="cell content">Centre St 산책</div><div class="cell note">Sai Ying Pun 포토스팟<br>벽화 거리</div></div>
+  <div class="row"><div class="cell time">10:30</div><div class="cell content">미드레벨 에스컬레이터</div><div class="cell note">세계에서 가장 긴 야외 에스컬레이터<br>Central &rarr; SoHo 이동</div></div>
+  <div class="row"><div class="cell time">11:00</div><div class="cell content">란퐁유엔 소호점<br><span class="food-desc">Lan Fong Yuen</span></div><div class="cell note">홍콩 밀크티 원조 맛집<br>스타킹 밀크티 필수</div></div>
+  <div class="row"><div class="cell time">11:30</div><div class="cell content">침차이키 점심<br><span class="food-desc">Tsim Chai Kee, Central</span></div><div class="cell note">미슐랭 완탕면 전문점</div></div>
+  <div class="row"><div class="cell time">12:30</div><div class="cell content">Hollywood Rd 산책</div><div class="cell note"><ul><li>Snack Baby Gelato <span class="food-desc">— 아이스크림</span></li><li>제니베이커리 <span class="food-desc">— 쿠키 선물 쇼핑</span></li></ul></div></div>
+  <div class="row"><div class="cell time">14:00</div><div class="cell content">피크 트램 탑승</div><div class="cell note">Central에서 탑승<br>편도 or 왕복 티켓</div></div>
+  <div class="row"><div class="cell time">14:30~16:00</div><div class="cell content">스카이 테라스 428</div><div class="cell note">홍콩 전경 파노라마 뷰<br>빅토리아 하버 조망</div></div>
+  <div class="row"><div class="cell time">16:30</div><div class="cell content">베이크하우스<br><span class="food-desc">Bakehouse</span></div><div class="cell note">에그타르트 존맛</div></div>
+  <div class="row"><div class="cell time">17:30</div><div class="cell content">막스누들<br><span class="food-desc">Mak's Noodle, Central</span></div><div class="cell note">A01 시그니처 메뉴 무조건</div></div>
+  <div class="row"><div class="cell time">18:30</div><div class="cell content">저녁식사<br><span class="food-desc">Peking Garden (Central)</span></div><div class="cell note">베이징덕&middot;마파두부 필수<br>카드 가능</div></div>
+  <div class="row"><div class="cell time">20:00</div><div class="cell content">호텔 짐 찾기</div><div class="cell note">베스트 웨스턴 플러스</div></div>
+  <div class="row"><div class="cell time">20:30</div><div class="cell content">공항 이동</div><div class="cell note">Airport Express (홍콩역 &rarr; 공항 약 24분)</div></div>
+  <div class="row"><div class="cell time">21:00</div><div class="cell content">홍콩 국제공항 도착</div><div class="cell note">면세점 쇼핑</div></div>
+  <div class="row"><div class="cell time" style="color:#e74c3c; font-weight:600;">00:50</div><div class="cell content" style="font-weight:600;">출국 &#x2708;&#xFE0F;</div><div class="cell note">4/19(토) 새벽</div></div>
+</div>
+
+<!-- 홍콩 참고 맛집 리스트 -->
+<div class="info-card">
+  <div class="info-card-header hongkong">참고 맛집 &amp; 장소 리스트</div>
+  <div class="info-card-body" style="font-size:12px; color:#555; line-height:1.8;">
+    <p style="font-weight:600; color:#333; margin-bottom:4px;">&#x1F35C; 구룡 (Kowloon)</p>
+    <p>
+      &bull; Lao Zhang Gui Dongbei <span class="food-desc">— 동북 중식</span><br>
+      &bull; Luk On Kui <span class="food-desc">— 딤섬</span><br>
+      &bull; Lung Dim Sum <span class="food-desc">— 북경 요리</span><br>
+      &bull; Wing Lai Yuen <span class="food-desc">— 사천 요리</span>
+    </p>
+    <p style="font-weight:600; color:#333; margin-top:8px; margin-bottom:4px;">&#x1F372; 홍콩섬 (HK Island)</p>
+    <p>
+      &bull; Sister Wah <span class="food-desc">— Tin Hau, 미슐랭 소고기국수 (10년+)</span><br>
+      &bull; 마이컵오브티 <span class="food-desc">— Wan Chai 차찬탱, 비프토마토 마카로니수프 추천</span><br>
+      &bull; Hing Kee Restaurant <span class="food-desc">— 쌀 전문 / 현금</span><br>
+      &bull; Wah Lok Cafe <span class="food-desc">— 프렌치토스트</span><br>
+      &bull; 청흥키 <span class="food-desc">— 상하이 요리, 테이크아웃만</span><br>
+      &bull; Oi Man Sang <span class="food-desc">— 광둥 요리</span><br>
+      &bull; Wing Fat Seafood <span class="food-desc">— 해산물에 맥주 한잔</span>
+    </p>
+    <p style="font-weight:600; color:#333; margin-top:8px; margin-bottom:4px;">&#x1F37A; 카페 &amp; 술</p>
+    <p>
+      &bull; E N <span class="food-desc">— 커피숍</span><br>
+      &bull; CATCH. Sai Ying Pun <span class="food-desc">— 맥주 맛집</span><br>
+      &bull; Out Of The Brew <span class="food-desc">— 호프</span><br>
+      &bull; Kinsman <span class="food-desc">— 칵테일바</span>
+    </p>
+    <p style="font-weight:600; color:#333; margin-top:8px; margin-bottom:4px;">&#x1F4F7; 포토스팟</p>
+    <p>
+      &bull; 익청빌딩 <span class="food-desc">— Quarry Bay, 트랜스포머 촬영지</span><br>
+      &bull; Kennedy Town 농구장 <span class="food-desc">— 포토스팟</span>
+    </p>
+    <p style="font-weight:600; color:#333; margin-top:8px; margin-bottom:4px;">&#x1F6CD;&#xFE0F; 쇼핑</p>
+    <p>
+      &bull; Fully Tableware <span class="food-desc">— 밀크티잔 판매점</span><br>
+      &bull; 福華相機 <span class="food-desc">— 카메라 전문점</span>
+    </p>
+  </div>
 </div>
 
 </body>
